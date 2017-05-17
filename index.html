@@ -21,17 +21,17 @@
 
 </head>
 <body onload="LoadMap()">
-	<h1 class="title">McWages data visualization project</h1>
+	<h1 class="title">Platy učitelů v mezinárodním srovnání</h1>
 	<!-- <h2 class="subtitle">First phase of McWages project</h2> -->
-	<h3 class="credit">World map vizualization of differences in salaries in McDonalds all over the world</h3>
-	<h3 class="credit">
+	<h3 class="credit">Interaktivní vizualizace postavená na datech organizace OECD</h3>
+	<!-- <h3 class="credit">
 		Discrete variants: <a href="javascript:void(0);" id='discrete1'  onclick="changeVariant('discrete','GreenOrange','discrete1')">Green - Orange</a> | <a href="javascript:void(0);" id='discrete2' onclick="changeVariant('discrete','LightGreenOrange','discrete2')">Light Green - Orange</a> | <a href="javascript:void(0);" id='discrete3'
 			onclick="changeVariant('discrete','BlueOrange','discrete3')">Blue - Orange</a>
 	</h3>
 	<h3 class="credit">
 		Gradient variants: <a href="javascript:void(0);" id='gradient1' class='activeVariant' onclick="changeVariant('gradient','GreenOrange','gradient1')">Green - Orange</a> | <a href="javascript:void(0);" id='gradient2' onclick="changeVariant('gradient','LightGreenOrange','gradient2')">Light Green - Orange</a> | <a href="javascript:void(0);" id='gradient3' onclick="changeVariant('gradient','BlueOrange','gradient3')">Blue
 			- Orange</a>
-	</h3>
+	</h3> -->
 
 	<div id="controls">
 		<div id="menu">
@@ -40,11 +40,11 @@
 					Zoom to <img src="src/down-arrow.png" class="menu-icon" />
 				</button>
 				<div class="dropdown-content">
-					<a href="javascript:void(0);" onclick="TransformZoom(-400,-1200,3,'South America');">South America</a> 
-					<a href="javascript:void(0);" onclick="TransformZoom(-2500,-1450,5,'Middle East');">Middle East</a> 
-					<a href="javascript:void(0);" onclick="TransformZoom(-1850,-1100,3,'Indian Ocean');">Indian Ocean</a> 
-					<a href="javascript:void(0);" onclick="TransformZoom(-1400,-300,2.5,'North Asia');">North Asia</a> 
-					<a href="javascript:void(0);" onclick="TransformZoom(-2000,-1150,5,'Europe');">Europe</a> 
+					<a href="javascript:void(0);" onclick="TransformZoom(-400,-1200,3,'South America');">South America</a>
+					<a href="javascript:void(0);" onclick="TransformZoom(-2500,-1450,5,'Middle East');">Middle East</a>
+					<a href="javascript:void(0);" onclick="TransformZoom(-1850,-1100,3,'Indian Ocean');">Indian Ocean</a>
+					<a href="javascript:void(0);" onclick="TransformZoom(-1400,-300,2.5,'North Asia');">North Asia</a>
+					<a href="javascript:void(0);" onclick="TransformZoom(-2000,-1150,5,'Europe');">Europe</a>
 					<a href="javascript:void(0);" onclick="TransformZoom(150,-150,2,'North America');">North America</a>
 				</div>
 			</div>
@@ -56,28 +56,28 @@
 				</button>
 
 				<div class="dropdown-content">
-					<a href="javascript:void(0);" onclick="changeVar('McWages')">McWages (USD)</a> 
-					<a href="javascript:void(0);" onclick="changeVar('McWages_PPP')">McWages (PPP)</a> 
-					<a href="javascript:void(0);" onclick="changeVar('BigMacPrice')">Big Mac Price (USD)</a> 
+					<a href="javascript:void(0);" onclick="changeVar('McWages')">McWages (USD)</a>
+					<a href="javascript:void(0);" onclick="changeVar('McWages_PPP')">McWages (PPP)</a>
+					<a href="javascript:void(0);" onclick="changeVar('BigMacPrice')">Big Mac Price (USD)</a>
 					<a href="javascript:void(0);" onclick="changeVar('BMPH')">Big Macs per hour (USD)</a>
 					<a href="javascript:void(0);" onclick="changeVar('MinWage')">Is minimum Wage?</a>
 				</div>
 			</div>
-			<div id="divYear" class="dropdiv">
+			<!-- <div id="divYear" class="dropdiv">
 				<button id="btnYear" class="dropbtn">
 					2016 <img src="src/down-arrow.png" class="menu-icon" />
 				</button>
 
 				<div class="dropdown-content">
-					<a href="javascript:void(0);" onclick="changeYear(2010)">2010</a> 
-					<a href="javascript:void(0);" onclick="changeYear(2011)">2011</a> 
-					<a href="javascript:void(0);" onclick="changeYear(2012)">2012</a> 
-					<a href="javascript:void(0);" onclick="changeYear(2013)">2013</a> 
-					<a href="javascript:void(0);" onclick="changeYear(2014)">2014</a> 
+					<a href="javascript:void(0);" onclick="changeYear(2010)">2010</a>
+					<a href="javascript:void(0);" onclick="changeYear(2011)">2011</a>
+					<a href="javascript:void(0);" onclick="changeYear(2012)">2012</a>
+					<a href="javascript:void(0);" onclick="changeYear(2013)">2013</a>
+					<a href="javascript:void(0);" onclick="changeYear(2014)">2014</a>
 					<a href="javascript:void(0);" onclick="changeYear(2015)">2015</a>
 					<a href="javascript:void(0);" onclick="changeYear(2016)">2016</a>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 		    <div id='tltp'></div>
@@ -389,14 +389,14 @@
 	    	    <path class="state-line" d="M 831.97903,406.68414 H 795.93709 L 795.32,399.85" id="HK-line" />
 	     		<path class="state-line" d="m 767.55,458.84 14.16691,-10.67486" id="SG-line" />
 	     		<path class="state-line" d="m 617.23111,389.37771 31.73494,20.63742" id="BH-line" />
-	     			
+
 	    	</g>
     	</g>
     </svg>
 
 	</div>
 		<svg id="svgLegend" width="600px" height="20px">
-				<g id="gLegend"></g>    
+				<g id="gLegend"></g>
 		    </svg>
 
 </body>
