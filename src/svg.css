@@ -1,0 +1,69 @@
+/* MAP AREA PROPERTIES */
+#chartContainer {
+  width: 600px;
+  height:400px;
+  margin:auto;
+  margin-top:7px;
+  margin-bottom:7px;
+}
+
+/* rectangle allowing for handling events outside standard svg state elements*/
+#container {
+	fill: none;
+	width:100%;
+	height:100%;
+	pointer-events:all;
+}
+
+.state {
+  fill: #AAAAAA; /* ZKOUSEJ JINY BARVY, MOZNA SVETLEJSI */	
+  stroke:white;
+  stroke-opacity: 1;
+  stroke-width:0.5;
+}
+
+.ActiveState:hover {
+	stroke: #4F4F4F;/* ZKOUSEJ JINY BARVY*/
+	stroke-width:1px;
+}
+.state-line {
+	fill:none;
+	stroke:#AAAAAA;
+	stroke-width:1px;
+}
+
+.legend-text {
+	font-size:1.2rem;	
+	font-weight:400;
+}
+
+.tooltip {
+	font-size: 1.3rem;
+}
+
+#svgLegend {
+	position:relative;
+	top:0px;
+	height:40px;
+}
+
+#svgMap {
+	width:600px;
+	height:400px;
+}
+
+#rectGradient {
+	left:150px;
+}
+
+div.tooltipfloat {
+  position: absolute;
+  text-align: center;
+  padding: 2px;
+  font-size:1.4rem;
+  background: #D1D4D3;
+  border: 0px;
+  border-radius: 4px;
+  pointer-events: none;
+  padding:4px;
+}
