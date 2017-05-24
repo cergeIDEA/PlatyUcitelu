@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>McWages Map project</title>
+<title>IDEA - Platy Učitelů</title>
 
 <!-- loading jQuery and D3 -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="src/svg.css">
 
 </head>
-<body onload="LoadMap()">
+<body onload="LoadMap_First()">
 	<h1 class="title">Platy učitelů v mezinárodním srovnání</h1>
 	<!-- <h2 class="subtitle">First phase of McWages project</h2> -->
 	<h3 class="credit">Interaktivní vizualizace postavená na datech organizace OECD</h3>
@@ -32,37 +32,39 @@
 		Gradient variants: <a href="javascript:void(0);" id='gradient1' class='activeVariant' onclick="changeVariant('gradient','GreenOrange','gradient1')">Green - Orange</a> | <a href="javascript:void(0);" id='gradient2' onclick="changeVariant('gradient','LightGreenOrange','gradient2')">Light Green - Orange</a> | <a href="javascript:void(0);" id='gradient3' onclick="changeVariant('gradient','BlueOrange','gradient3')">Blue
 			- Orange</a>
 	</h3> -->
+	<div id="divVar" class="dropdiv">
+		<button id="btnVar" class="dropbtn">Relativní příjmy učitelů (1. stupen ZŠ)<img src="src/down-arrow.png" class="menu-icon" />
+		</button>
 
+		<div class="dropdown-content">
+			<a href="javascript:void(0);" onclick="changeVar('relativeSalary1')">Relativní příjmy učitelů (1. stupen ZŠ)</a>
+			<a href="javascript:void(0);" onclick="changeVar('relativeSalary2')">Relativní příjmy učitelů (2. stupen ZŠ)</a>
+			<a href="javascript:void(0);" onclick="changeVar('studentYearExp1')">Roční Výdaje na studenta (1. stupen ZŠ)</a>
+			<a href="javascript:void(0);" onclick="changeVar('studentYearExp2')">Roční Výdaje na studenta (2. stupen ZŠ)</a>
+			<a href="javascript:void(0);" onclick="changeVar('studentCumExp1')">Kumulované Výdaje na studenta (1. stupen ZŠ)</a>
+			<a href="javascript:void(0);" onclick="changeVar('studentCumExp2')">Kumulované Výdaje na studenta (2. stupen ZŠ)</a>
+
+		</div>
+	</div>
 	<div id="controls">
 		<div id="menu">
 			<div id="divZoom" class="dropdiv">
 				<button id="btnZoom" class="dropbtn">
-					Zoom to <img src="src/down-arrow.png" class="menu-icon" />
+					Přiblížit region <img src="src/down-arrow.png" class="menu-icon" />
 				</button>
 				<div class="dropdown-content">
-					<a href="javascript:void(0);" onclick="TransformZoom(-400,-1200,3,'South America');">South America</a>
-					<a href="javascript:void(0);" onclick="TransformZoom(-2500,-1450,5,'Middle East');">Middle East</a>
-					<a href="javascript:void(0);" onclick="TransformZoom(-1850,-1100,3,'Indian Ocean');">Indian Ocean</a>
-					<a href="javascript:void(0);" onclick="TransformZoom(-1400,-300,2.5,'North Asia');">North Asia</a>
-					<a href="javascript:void(0);" onclick="TransformZoom(-2000,-1150,5,'Europe');">Europe</a>
-					<a href="javascript:void(0);" onclick="TransformZoom(150,-150,2,'North America');">North America</a>
+					<a href="javascript:void(0);" onclick="TransformZoom(-400,-1200,3,'Jižní Amerika');">Jižní Amerika</a>
+					<a href="javascript:void(0);" onclick="TransformZoom(-2500,-1450,5,'Blízký východ');">Blízký východ</a>
+					<a href="javascript:void(0);" onclick="TransformZoom(-1850,-1100,3,'Indický oceán');">Indický oceán</a>
+					<a href="javascript:void(0);" onclick="TransformZoom(-1400,-300,2.5,'Severní Asie');">Severní Asie</a>
+					<a href="javascript:void(0);" onclick="TransformZoom(-2000,-1150,5,'Evropa');">Evropa</a>
+					<a href="javascript:void(0);" onclick="TransformZoom(150,-150,2,'Severní Amerika');">Severní Amerika</a>
 				</div>
 			</div>
 			<div id="divZoomOut" class="dropdiv">
-				<button id="zoomOutBtn" class="dropbtn" onclick="TransformZoom(0,0,1,'Zoom Out');">Zoom Out</button>
+				<button id="zoomOutBtn" class="dropbtn" onclick="TransformZoom(-59,-150,1.15,'');">Svět</button>
 			</div>
-			<div id="divVar" class="dropdiv">
-				<button id="btnVar" class="dropbtn">Big Macs per hour (USD) <img src="src/down-arrow.png" class="menu-icon" />
-				</button>
 
-				<div class="dropdown-content">
-					<a href="javascript:void(0);" onclick="changeVar('McWages')">McWages (USD)</a>
-					<a href="javascript:void(0);" onclick="changeVar('McWages_PPP')">McWages (PPP)</a>
-					<a href="javascript:void(0);" onclick="changeVar('BigMacPrice')">Big Mac Price (USD)</a>
-					<a href="javascript:void(0);" onclick="changeVar('BMPH')">Big Macs per hour (USD)</a>
-					<a href="javascript:void(0);" onclick="changeVar('MinWage')">Is minimum Wage?</a>
-				</div>
-			</div>
 			<!-- <div id="divYear" class="dropdiv">
 				<button id="btnYear" class="dropbtn">
 					2016 <img src="src/down-arrow.png" class="menu-icon" />
@@ -398,6 +400,12 @@
 		<svg id="svgLegend" width="600px" height="20px">
 				<g id="gLegend"></g>
 		    </svg>
+	<div id="descBox">
+		<p id="desVarName"></p>
+		<p id="desVarDesc"></p><!--  Lidsky popis + unit + rok -->
+		<p id="desVarOECD"></p>
+		<!-- <span id="des"></span> -->
+	</div>
 
 </body>
 </html>
