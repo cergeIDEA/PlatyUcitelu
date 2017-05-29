@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>IDEA - Platy Učitelů</title>
+<title>IDEA - Učitelé v mezinárodním srovnání</title>
 
 <!-- loading jQuery and D3 -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -21,77 +21,73 @@
 
 </head>
 <body onload="LoadMap_First()">
-	<h1 class="title">Platy učitelů v mezinárodním srovnání</h1>
-	<!-- <h2 class="subtitle">First phase of McWages project</h2> -->
-	<h3 class="credit">Interaktivní vizualizace postavená na datech organizace OECD</h3>
-	<!-- <h3 class="credit">
-		Discrete variants: <a href="javascript:void(0);" id='discrete1'  onclick="changeVariant('discrete','GreenOrange','discrete1')">Green - Orange</a> | <a href="javascript:void(0);" id='discrete2' onclick="changeVariant('discrete','LightGreenOrange','discrete2')">Light Green - Orange</a> | <a href="javascript:void(0);" id='discrete3'
-			onclick="changeVariant('discrete','BlueOrange','discrete3')">Blue - Orange</a>
-	</h3>
-	<h3 class="credit">
-		Gradient variants: <a href="javascript:void(0);" id='gradient1' class='activeVariant' onclick="changeVariant('gradient','GreenOrange','gradient1')">Green - Orange</a> | <a href="javascript:void(0);" id='gradient2' onclick="changeVariant('gradient','LightGreenOrange','gradient2')">Light Green - Orange</a> | <a href="javascript:void(0);" id='gradient3' onclick="changeVariant('gradient','BlueOrange','gradient3')">Blue
-			- Orange</a>
-	</h3> -->
-	<div id="divVar" class="dropdiv">
-		<button id="btnVar" class="dropbtn">Relativní příjmy učitelů (1. stupen ZŠ)<img src="src/down-arrow.png" class="menu-icon" />
-		</button>
+	  <h1 id="title">Učitelé v mezinárodním srovnání</h1>
+  <!-- <h2 class="subtitle">First phase of McWages project</h2>
+	<h3 class="credit">Interaktivní vizualizace postavená na datech organizace OECD</h3> -->
 
-		<div class="dropdown-content">
-			<a href="javascript:void(0);" onclick="changeVar('relativeSalary1')">Relativní příjmy učitelů (1. stupen ZŠ)</a>
-			<a href="javascript:void(0);" onclick="changeVar('relativeSalary2')">Relativní příjmy učitelů (2. stupen ZŠ)</a>
-			<a href="javascript:void(0);" onclick="changeVar('studentYearExp1')">Roční Výdaje na studenta (1. stupen ZŠ)</a>
-			<a href="javascript:void(0);" onclick="changeVar('studentYearExp2')">Roční Výdaje na studenta (2. stupen ZŠ)</a>
-			<a href="javascript:void(0);" onclick="changeVar('studentCumExp1')">Kumulované Výdaje na studenta (1. stupen ZŠ)</a>
-			<a href="javascript:void(0);" onclick="changeVar('studentCumExp2')">Kumulované Výdaje na studenta (2. stupen ZŠ)</a>
-
-		</div>
-	</div>
+<a href="http://idea.cerge-ei.cz/" target="_blank"><img id="logo" src="IDEA.png"/></a>
 	<div id="controls">
+
 		<div id="menu">
-			<div id="divZoom" class="dropdiv">
-				<button id="btnZoom" class="dropbtn">
-					Přiblížit region <img src="src/down-arrow.png" class="menu-icon" />
-				</button>
-				<div class="dropdown-content">
-					<a href="javascript:void(0);" onclick="TransformZoom(-400,-1200,3,'Jižní Amerika');">Jižní Amerika</a>
-					<a href="javascript:void(0);" onclick="TransformZoom(-2500,-1450,5,'Blízký východ');">Blízký východ</a>
-					<a href="javascript:void(0);" onclick="TransformZoom(-1850,-1100,3,'Indický oceán');">Indický oceán</a>
-					<a href="javascript:void(0);" onclick="TransformZoom(-1400,-300,2.5,'Severní Asie');">Severní Asie</a>
-					<a href="javascript:void(0);" onclick="TransformZoom(-2000,-1150,5,'Evropa');">Evropa</a>
-					<a href="javascript:void(0);" onclick="TransformZoom(150,-150,2,'Severní Amerika');">Severní Amerika</a>
-				</div>
-			</div>
-			<div id="divZoomOut" class="dropdiv">
-				<button id="zoomOutBtn" class="dropbtn" onclick="TransformZoom(-59,-150,1.15,'');">Svět</button>
-			</div>
-
-			<!-- <div id="divYear" class="dropdiv">
-				<button id="btnYear" class="dropbtn">
-					2016 <img src="src/down-arrow.png" class="menu-icon" />
-				</button>
-
-				<div class="dropdown-content">
-					<a href="javascript:void(0);" onclick="changeYear(2010)">2010</a>
-					<a href="javascript:void(0);" onclick="changeYear(2011)">2011</a>
-					<a href="javascript:void(0);" onclick="changeYear(2012)">2012</a>
-					<a href="javascript:void(0);" onclick="changeYear(2013)">2013</a>
-					<a href="javascript:void(0);" onclick="changeYear(2014)">2014</a>
-					<a href="javascript:void(0);" onclick="changeYear(2015)">2015</a>
-					<a href="javascript:void(0);" onclick="changeYear(2016)">2016</a>
-				</div>
-			</div> -->
+			<div id="divZoom">
+				<a id="linkEurope" href="javascript:void(0);" onclick="TransformZoom(-2000,-1150,5, 'Evropa');" class="selected">Evropa</a>
+				<a id="linkWorld" href="javascript:void(0);" onclick="TransformZoom(-59,-150,1.15, 'Svět');">Svět</a>
 		</div>
-
-		    <div id='tltp'></div>
+	<div id='tltp'></div>
 
 	</div>
 
+
+</div>
+<div id="verticalLine"></div>
+<div id="main">
+	<div id="sideMenu">
+		<p>Platy učitelů: </p>
+		<a id="a_relativeSalary1" href="javascript:void(0);" onclick="changeVar('relativeSalary1')">Učitelé vůči absolventům VŠ (1. stupeň)</a>
+		<a id="a_relativeSalary2" href="javascript:void(0);" onclick="changeVar('relativeSalary2')">Učitelé vůči absolventům VŠ (2. stupeň)</a>
+		<a id="a_teacherExp1" href="javascript:void(0);" onclick="changeVar('teacherExp1')">Náklady na učitele na studenta (1. stupeň)</a>
+		<a id="a_teacherExp2" href="javascript:void(0);" onclick="changeVar('teacherExp2')">Náklady na učitele na studenta (2. stupeň)</a>
+		<p>Celkové výdaje na vzdělávání: </p>
+		<a id="a_publicExp" href="javascript:void(0);" onclick="changeVar('publicExp')">Veřejné výdaje vůči HDP</a>
+		<a id="a_privateExp" href="javascript:void(0);" onclick="changeVar('privateExp')">Soukromé výdaje vůči HDP</a>
+		<a id="a_totalExp" href="javascript:void(0);" onclick="changeVar('totalExp')">Celkové výdaje vůči HDP</a>
+		<a id="a_educExpSh" href="javascript:void(0);" onclick="changeVar('educExpSh')">Podíl na celkových veřejných výdajích</a>
+		<p>Výdaje na studenta: </p>
+		<a id="a_studentYearExp1" href="javascript:void(0);" onclick="changeVar('studentYearExp1')">Roční na 1. stupni</a>
+		<a id="a_studentYearExp2" href="javascript:void(0);" onclick="changeVar('studentYearExp2')">Roční na 2. stupni</a>
+		<a id="a_studentCumExp1"  href="javascript:void(0);" onclick="changeVar('studentCumExp1')">Kumulované na 1. stupni</a>
+		<a id="a_studentCumExp2" href="javascript:void(0);" onclick="changeVar('studentCumExp2')">Kumulované na 2. stupni</a>
+		<p>Struktura výdajů: </p>
+		<a id="a_currentExpSh1" href="javascript:void(0);" onclick="changeVar('currentExpSh1')">Podíl provozních výdajů (1. stupeň)</a>
+		<a id="a_currentExpSh2" href="javascript:void(0);" onclick="changeVar('currentExpSh2')">Podíl provozních výdajů (2. stupeň)</a>
+		<a id="a_teacherExpSh" href="javascript:void(0);" onclick="changeVar('teacherExpSh')">Platy učitelů vůči celkovým výdajům</a>
+		<a id="a_teacherCurrentSh" href="javascript:void(0);" onclick="changeVar('teacherCurrentSh')">Platy učitelů vůči provozním výdajům</a>
+		<p>Charakteristiky učitelů: </p>
+		<a id="a_ageBelow30" href="javascript:void(0);" onclick="changeVar('ageBelow30')">Podíl učitelů pod 30 let</a>
+		<a id="a_age30_39" href="javascript:void(0);" onclick="changeVar('age30_39')">Podíl učitelů 30 a 39 lety</a>
+		<a id="a_femaleSh" href="javascript:void(0);" onclick="changeVar('femaleSh')">Podíl žen mezi učitely</a>
+	</div>
 
 	<div id="chartContainer">
+
+
+		<svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<defs>
+				<pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="4" height="4">
+				  <path d="M-1,1 l2,-2
+				           M0,4 l4,-4
+				           M3,5 l2,-2"
+				        style="stroke:#DDDDDD; stroke-width:2" />
+				</pattern>
+
+			</defs>
+		</svg>
+
 	<div id="tltpflt"></div>
 	<svg id="svgMap" viewBox="0 0 1024 768">
 	<defs id="defs">
 	</defs>
+
 		<g id="gContainer" , style="{pointer-events:all;}]">
  		<rect id="container"></rect>
 			<g id="mapGroup">
@@ -395,17 +391,16 @@
 	    	</g>
     	</g>
     </svg>
-
-	</div>
 		<svg id="svgLegend" width="600px" height="20px">
 				<g id="gLegend"></g>
-		    </svg>
+		    </svg>	</div>
+
 	<div id="descBox">
 		<p id="desVarName"></p>
 		<p id="desVarDesc"></p><!--  Lidsky popis + unit + rok -->
 		<p id="desVarOECD"></p>
 		<!-- <span id="des"></span> -->
 	</div>
-
+</div>
 </body>
 </html>

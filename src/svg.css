@@ -2,9 +2,13 @@
 #chartContainer {
   width: 600px;
   height:350px;
-  margin:auto;
-  margin-top:7px;
-  margin-bottom:7px;
+  left:50%;
+  top:43px;
+  /*margin:auto;*/
+  margin-left: -300px;
+  position:absolute;
+  /*margin-top:7px;*/
+  /*margin-bottom: 15px;*/
 }
 
 /* rectangle allowing for handling events outside standard svg state elements*/
@@ -15,8 +19,30 @@
 	pointer-events:all;
 }
 
+#gMenu {
+
+}
+#rectMenu {
+    fill: white;
+    position:absolute;
+    /*top:50px;*/
+    width: 600px;
+    height: 600px;
+    margin: 50px;
+    fill-opacity: 0.9;
+}
+
+.menuCircle {
+  fill: #DDDDDD;
+}
+
+.menuLabel {
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
 .state {
-  fill: #AAAAAA; /* ZKOUSEJ JINY BARVY, MOZNA SVETLEJSI */
+  fill: #DDDDDD; /* ZKOUSEJ JINY BARVY, MOZNA SVETLEJSI */
   stroke:white;
   stroke-opacity: 1;
   stroke-width:0.5;
@@ -43,13 +69,22 @@
 
 #svgLegend {
 	position:relative;
-	top:40px;
+	top:0px;
 	height:40px;
 }
 
 #svgMap {
 	width:600px;
 	height:400px;
+}
+
+#svgMenu {
+  width: 600px;
+  height: 600px;
+  position:absolute;
+  top:80px;
+  left:50%;
+  margin-left:-300px;
 }
 
 #rectGradient {

@@ -11,10 +11,15 @@ body {
 }
 
 /* HEADINGS */
-.title {
-  font-size: 2.5rem;
+#title {
+	position:absolute;
+	top:15px;
+	margin-top: 0px;
+	left:50%;
+	margin-left:-300px;
+	font-size: 2rem;
   fill: #4F4F4F;
-  font-weight: 300;
+  font-weight: 500;
   text-anchor: middle;
 }
 .subtitle {
@@ -37,13 +42,73 @@ body {
 	color: #4F4F4F;
 }
 
+#logo {
+	width: 150px;
+	position: absolute;
+	left:50%;
+	margin-left: -545px;
+	top: 15px;
+}
+
 /* DROPDOWN MENU */
+
+#sideMenu {
+	display:block;
+	position: absolute;
+	width: 250px;
+	/*background-color: #99C2E1;*/
+
+	background-color: #D0E3F1;
+	top:53px;
+	left:50%;
+	margin-left:-550px;
+}
+
+#sideMenu a{
+	color: black;
+	text-align:left;
+	padding: 5px 5px;
+	text-decoration: none;
+	display: block;
+	font-size: 1.1rem;
+}
+
+#sideMenu p {
+	color: black;
+	text-align:left;
+	padding: 5px 5px;
+	margin: 0px 0px;
+	text-decoration: none;
+	display: block;
+	font-size: 1.2rem;
+	font-weight: 500;
+
+}
+
+#sideMenu a:hover {
+	background-color: #D1D4D3;
+	color:#bb133e;
+	font-weight: 600;
+}
+
+#sideMenu a.selected {
+
+	font-weight: 600;
+	background-color: #bb133e;
+	color:white;
+}
+
 #controls {
+	position: absolute;
+
 	display:block;
 	text-align:center;
+	top:25px;
+	left:50%;
+	margin-left: 120px;
 	height:20px;
 	width:600px;
-	margin-top:30px;
+	/*margin-top:0px;*/
 }
 #menu {
 	height:20px;
@@ -85,29 +150,71 @@ body {
     display: block;
     font-size: 1.1rem;
 }
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-	background-color: #e1e1e1;
+.dropdown-content p {
+	color: black;
+	text-align:left;
+	padding: 5px 5px;
+	margin: 0px 0px;
+	text-decoration: none;
+	display: block;
+	font-size: 1.2rem;
+	font-weight: 500;
 }
 
-/* Show the dropdown menu on hover */
-.dropdiv:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdiv:hover .dropbtn {
-    font-weight:600;
-}
 
 /*POSITIONING MENU CONTROLS */
 
 #divZoom {
+	position:absolute;
 	left:50%;
-	margin-left:-318px;
+	margin-left:-305px;
+	top:-5px;
 }
 
+#divZoom a {
+	display:inline-block;
+	vertical-align: middle;
+	margin:5px;
+	padding-top: 3px;
+	width:80px;
+	height: 21px;
+	text-decoration: none;
+	background-color: #f8f8f8;
+	font-size: 1.3rem;
+	font-weight: 500;
+	color:black;
+	border: 1px solid #f8f8f8;
+}
+
+#verticalLine {
+	width: 850px;
+	height:3px;
+	background-color: #bb133e;
+	position:absolute;
+	top:50px;
+	left:50%;
+	margin-left: -550px;
+}
+
+#divZoom a.selected {
+	background-color: #bb133e;
+	border: 2px solid #bb133e;
+	color:white;
+}
+
+#divZoom a:hover {
+	color: #bb133e;
+	font-weight: 700;
+}
+
+#divZoom a.selected:hover {
+	color:#bb133e;
+	font-weight: 700;
+	background-color: #f8f8f8;
+	border: 2px solid #bb133e;
+}
+
+/*
 #divZoomOut {
 	left:50%;
 	margin-left:-220px;
@@ -116,34 +223,38 @@ body {
 
 #zoomOutBtn:hover {
 	font-weight:600;
-}
+}*/
 
 #divVar {
-	/*display:block;*/
-	/*margin:auto;*/
-	/*width: 50%;*/
+	min-width: 250px;
 	font-size:2.0rem;
 	left:50%;
 	margin-left:40px;
 }
-
+#main {
+	width:850px;
+	height: 600px;
+}
 #divYear {
 	left:50%;
 	margin-left:220px;
 }
 
 #descBox {
-	position: relative;
+	position: absolute;
 	display: block;
-	top: 80px;
-	width: 100%;
-	height:120px;
-	background: lightblue;
+	top: 513px;
+	width: 580px;
+	left: 50%;
+	height:118px;
+	background: #bb133e;
 	padding: 15px;
-	border-radius: :10px;
+	border-radius: :20px;
 	font-size:1.2rem;
+	color: white;
+	margin-left: -300px;
 }
 
 #desVarName {
 	font-weight: bold;
-}
+BB133E}

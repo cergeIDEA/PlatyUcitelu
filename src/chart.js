@@ -1,39 +1,25 @@
 
+// TODO:
+// 1) femaleShare ma byt maleShare
+// 2) secist věk učiteů - ucitele pod 40
+// 3) dropdown muze byt multilevel
+// 4) Udaje v % at jsou skutecne v procentech, ne v desetinnych mistech
+// 5) Srafovani bud zrusit nebo udelat koukatelny
+
+
+
 var varName = 'relativeSalary1';
-var variantSelect = 'gradient';
-var colorSelect = 'GreenOrange';
+// var variantSelect = 'gradient';
+var colorSelect = 'IDEABlue';
 
 var legendColors = {
+	"ColBrew" : ['#FFF5EB','#FEE6CE',"#FDD0A2",'#FDAE6B',"#FD8D3C","#F16913","#D94801",'#A63603',"#7F2704"],
+	"IDEARed" : ['#F5F5F5','#EDDEE2',"#E6C7CF",'#DFB0BC',"#D899A9","#D18396","#C96C83",'#C25570',"#B4274A"],
+	"IDEABlue" : ['#C7D8E5','#AECADE',"#95BCD8",'#7CAED2',"#63A0CC","#4A92C6","#3184C0",'#1876BA',"#0068B4"],
 	"GreenOrange" : ['#75995A','#90B144',"#AAC92D",'#C5D123',"#E0D819","#E7CA15","#EEBB11",'#F6AB0D',"#FD9B08"],
 	"BlueOrange" : ["#69D2E7",'#84DDEE',"#9fe7f5",'#C0E6E1',"#E0E4CC",'#EAB57E',"#F38630",'#F77818',"#FA6900"],
 	"LightGreenOrange" : ["#BBBB88",'#C4C18B',"#CCC68D",'#DDD293',"#EEDD99",'#EED095',"#EEC290",'#EEB68C',"#EEAA88"]
 }
-
-
-// var legendProperties = {
-// 		"texts" : {
-// 				"gradient" : { "BMPH" : ['0','0.2','0.4','0.6','0.8','1'],
-// 							   "McWages" : ['0','20','40','60','80','100'],
-// 							   "McWages_PPP" : ['0','20','40','60','80','100'],
-// 							   "BigMacPrice" : ['0','20','40','60','80','100'],
-// 							   "MinWage" : ['No','Yes']
-// 							   								}
-// 					},
-// 		"minmax" : {
-// 				"BMPH" : [0,1],
-// 				"McWages" : [0,100],
-// 				"McWages_PPP":[0,100],
-// 				"BigMacPrice" : [0,100],
-// 				"MinWage" : [0,1]
-// 		},
-// 		"colors" : {
-// 			"gradient" : {
-// 				"GreenOrange" : ['#75995A','#90B144',"#AAC92D",'#C5D123',"#E0D819","#E7CA15","#EEBB11",'#F6AB0D',"#FD9B08"],
-// 				"BlueOrange" : ["#69D2E7",'#84DDEE',"#9fe7f5",'#C0E6E1',"#E0E4CC",'#EAB57E',"#F38630",'#F77818',"#FA6900"],
-// 				"LightGreenOrange" : ["#BBBB88",'#C4C18B',"#CCC68D",'#DDD293',"#EEDD99",'#EED095',"#EEC290",'#EEB68C',"#EEAA88"]
-// 				}
-// 			}
-// 		};
 
 var max;
 var min;
@@ -41,6 +27,7 @@ var colorScale;
 var tooltipfloat;
 var zoomTransform;
 var fZoom;
+
 
 // CONTROLLING VARIANTS AND VARIABLES
 
@@ -66,9 +53,11 @@ function changeVariant(variant,colors,id)
 function changeVar(xVar)
 {
 	varName = xVar;
-	$('#btnVar').html(data.Variables[xVar].fullName + '  <img src="src/down-arrow.png" class="menu-icon" />' );
+	//$('#btnVar').html(data.Variables[xVar].ShortName + '  <img src="src/down-arrow.png" class="menu-icon" />' );
 	LoadMap();
 	LoadDesc();
+	$('#sideMenu .selected').removeClass('selected');
+	$('#a_' + xVar).addClass('selected');
 }
 
 // MAIN LOADING FUNCTIONS
@@ -76,21 +65,24 @@ function LoadMap_First()
 {
 	LoadMap();
 	LoadDesc();
+	//TransformZoom(-2000,-1150,5,'Evropa');
+	$('#a_relativeSalary1').addClass('selected');
+	$('#linkEurope').addClass('selected');//GenerateMenu();
+  TransformZoom(-2000,-1150,5,'Evropa')
 
-	TransformZoom(-59,-150,1.15,'');
-}
+};
 
 function LoadDesc()
 {
 	vari = data.Variables[varName]
 
 	$('#desVarName').text(vari.fullName);
-	$('#desVarDesc').text(vari.Description + '(' + vari.unit + '; ' +vari.year + ')');
-	oecd = 'Podrobnější informace jsou k dispozici v reportu OECD na straně %pg v kapitole %ch. Data lze také stáhnout přímo <a href="%l">zde</a>'
-	oecd.replace('%pg',vari.sourcePage)
-	oecd.replace('%ch',vari.ref)
-	oecd.replace('%l',vari.sourceLink)
-	$('#desVarOECD').text(oecd);
+	$('#desVarDesc').text(vari.Description + ' (' + vari.unit + '; ' +vari.year + ')');
+	oecd = 'Podrobnější informace jsou k dispozici v reportu <a href="http://www.oecd.org/edu/education-at-a-glance-19991487.htm">Education at glance</a> na straně %pg v kapitole %ch. Data lze také stáhnout přímo <a href="%l">zde</a>'
+	oecd = oecd.replace('%pg',vari.sourcePage)
+	oecd = oecd.replace('%ch',vari.ref)
+	oecd = oecd.replace('%l',vari.sourceLink)
+	$('#desVarOECD').html(oecd);
 }
 function LoadMap()
 {
@@ -109,7 +101,6 @@ function LoadMap()
 	$('.ActiveState').removeClass('ActiveState');
 	$('#linear-gradient').remove();
 
-	if( variantSelect == 'gradient') {
 		var linearGradient = d3.select('#defs').append('linearGradient').attr('id','linear-gradient');
 
 		linearGradient // mozna ze y ma byt 50 %, podle obrazku v blogu
@@ -125,7 +116,7 @@ function LoadMap()
 				.append('stop')
 				.attr('offset',function(d,i) {return i/(colorScale.range().length-1);} )
 				.attr('stop-color',function(d) {return d; });
-	}
+
 
 	var colorCont;
 	var rangeCont;
@@ -151,7 +142,8 @@ function LoadMap()
 				}
 			else
 				{
-					$('#' + d).css('fill','#AAAAAA')
+					// $('#' + d).css('fill','#AAAAAA')
+					$('#' + d).css('fill','url(#diagonalHatch')
 				}
 		}
     );
@@ -252,7 +244,7 @@ function zoomed() {
 
 
 
-function TransformZoom(X,Y,k,ZoomName){
+function TransformZoom(X,Y,k,zoomName){
 	s = 'translate(' + X + ',' + Y +') scale (' + k +')';
 	g = d3.select('#gContainer').transition().duration(750).attr('transform',s);
 
@@ -261,16 +253,17 @@ function TransformZoom(X,Y,k,ZoomName){
 	z.y = Y;
 	z.x = X;
 
-	if (ZoomName != '')
-		{
-			$('#btnZoom').html(ZoomName  +    '  <img src="src/down-arrow.png" class="menu-icon" />');
-			$('#divZoomOut').css('display','inline-block');
-		}
-	else
-		{
-			$('#btnZoom').html('Přiblížit region  ' +  '<img src="src/down-arrow.png" class="menu-icon" />')
-			$('#divZoomOut').css('display','none')
-		}
+	$('#divZoom .selected').removeClass('selected');
+	if (zoomName == 'Evropa')
+	{
+		$('#linkEurope').addClass('selected');
+	}
+	else {
+		$('#linkWorld').addClass('selected');
+	}
+	// $('linkEurope').toggleClass('selected')
+	// $('linkWorld').toggleClass('selected')
+
 	fZoom.transform("",z);
 };
 
