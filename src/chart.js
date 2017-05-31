@@ -1,11 +1,16 @@
 
 // TODO:
-// 1) femaleShare ma byt maleShare
-// 2) secist věk učiteů - ucitele pod 40
-// 3) dropdown muze byt multilevel
+// 1) femaleShare ma byt maleShare // udela Sam
+// 2) secist věk učiteů - ucitele pod 40 // udela Sam
 // 4) Udaje v % at jsou skutecne v procentech, ne v desetinnych mistech
 // 5) Srafovani bud zrusit nebo udelat koukatelny
-
+// 6) odstran ctverce malych zemi //done
+// 7) svetla je moc svetla a vypada seda - budto ma byt tmavsi, nebo se ma vsechno srafovat
+// 8) Přidej k ose jednotky //done
+// 9) Doladit pro jednotlivé prohlížeče
+// 9) Vyčisti kód a okomentuj kód
+// 10) Minify code
+// 11) sjednotit PPS a PPP plus nekde vysvetlit
 
 
 var varName = 'relativeSalary1';
@@ -65,6 +70,7 @@ function LoadMap_First()
 {
 	LoadMap();
 	LoadDesc();
+	varName = 'relativeSalary1';
 	//TransformZoom(-2000,-1150,5,'Evropa');
 	$('#a_relativeSalary1').addClass('selected');
 	$('#linkEurope').addClass('selected');//GenerateMenu();
@@ -184,6 +190,7 @@ function generateLegendText()
 {
 	var max = data.Variables[varName].max;
 	var min = data.Variables[varName].min;
+	var unit = data.Variables[varName].unit;
 	var count = data.Variables[varName].LegendCount;
 	var inter = data.Variables[varName].LegendInterval;
   	var round = data.Variables[varName].round;
@@ -195,6 +202,16 @@ function generateLegendText()
 			result.push(last.toFixed(round))
 			last = last + inter;
 		}
+
+
+	if (unit == '%')
+	{
+		texts = []
+		for (var s in result) {
+			val = result[s]
+			result[s] = val + '%'
+		}
+	}
 	return result;
 }
 
@@ -208,10 +225,20 @@ function drawLegend()
 	// 	.attr('class','legend-text')
 	// 	.attr('y','18px')
 	// 	.text(data.Variables[varName].fullName)
+	var unit = data.Variables[varName].unit;
+
 
 	var colors;
 	var texts;
-
+	if (unit != '%') {
+		svgLegend
+			.append('text')
+			.attr('id','legendUnit')
+			.attr('x',80)
+			.attr('y',28)
+			.attr('font-weight',550)
+			.text(unit);
+	}
 
 	rectWidth = 300;
 	svgLegend.append('rect')
@@ -223,6 +250,7 @@ function drawLegend()
 		.style('fill','url(#linear-gradient)');
 
  	texts = generateLegendText();
+
 	interval = rectWidth /(texts.length-1)
 	svgLegend.selectAll('g')
 		.data(texts)

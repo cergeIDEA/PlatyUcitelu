@@ -67,6 +67,10 @@
 	font-size: 1.3rem;
 }
 
+#legendUnit {
+    
+}
+
 #svgLegend {
 	position:relative;
 	top:0px;

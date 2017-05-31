@@ -70,7 +70,7 @@ body {
 	padding: 5px 5px;
 	text-decoration: none;
 	display: block;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 }
 
 #sideMenu p {
@@ -243,7 +243,7 @@ body {
 #descBox {
 	position: absolute;
 	display: block;
-	top: 513px;
+	top: 503px;
 	width: 580px;
 	left: 50%;
 	height:118px;
