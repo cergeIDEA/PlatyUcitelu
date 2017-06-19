@@ -1,11 +1,11 @@
 /* MAP AREA PROPERTIES */
 #chartContainer {
-  width: 600px;
+  width: 585px;
   height:350px;
   left:50%;
   top:43px;
   /*margin:auto;*/
-  margin-left: -300px;
+  margin-left: -285px;
   position:absolute;
   /*margin-top:7px;*/
   /*margin-bottom: 15px;*/
@@ -68,7 +68,7 @@
 }
 
 #legendUnit {
-    
+
 }
 
 #svgLegend {
@@ -78,7 +78,7 @@
 }
 
 #svgMap {
-	width:600px;
+	width:586px;
 	height:400px;
 }
 

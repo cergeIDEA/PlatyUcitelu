@@ -1,4 +1,4 @@
-
+﻿
 // TODO:
 // 1) femaleShare ma byt maleShare // udela Sam
 // 2) secist věk učiteů - ucitele pod 40 // udela Sam
@@ -15,12 +15,13 @@
 
 var varName = 'relativeSalary1';
 // var variantSelect = 'gradient';
-var colorSelect = 'IDEABlue';
+var colorSelect = 'IDEALight';
 
 var legendColors = {
 	"ColBrew" : ['#FFF5EB','#FEE6CE',"#FDD0A2",'#FDAE6B',"#FD8D3C","#F16913","#D94801",'#A63603',"#7F2704"],
 	"IDEARed" : ['#F5F5F5','#EDDEE2',"#E6C7CF",'#DFB0BC',"#D899A9","#D18396","#C96C83",'#C25570',"#B4274A"],
 	"IDEABlue" : ['#C7D8E5','#AECADE',"#95BCD8",'#7CAED2',"#63A0CC","#4A92C6","#3184C0",'#1876BA',"#0068B4"],
+	"IDEALight" : ['#C7D8E5','#AECADE',"#95BCD8",'#7CAED2',"#63A0CC","#4A92C6","#3184C0",'#1876BA',"#0068B4"],
 	"GreenOrange" : ['#75995A','#90B144',"#AAC92D",'#C5D123',"#E0D819","#E7CA15","#EEBB11",'#F6AB0D',"#FD9B08"],
 	"BlueOrange" : ["#69D2E7",'#84DDEE',"#9fe7f5",'#C0E6E1',"#E0E4CC",'#EAB57E',"#F38630",'#F77818',"#FA6900"],
 	"LightGreenOrange" : ["#BBBB88",'#C4C18B',"#CCC68D",'#DDD293',"#EEDD99",'#EED095',"#EEC290",'#EEB68C',"#EEAA88"]
@@ -47,13 +48,6 @@ function changeVariant(variant,colors,id)
 	LoadMap();
 	LoadDesc();
 };
-//
-// function changeYear(xYear)
-// {
-// 	year = xYear;
-// 	$('#btnYear').html(xYear + '  <img src="src/down-arrow.png" class="menu-icon" />');
-// 	LoadMap();
-// }
 
 function changeVar(xVar)
 {
@@ -84,7 +78,7 @@ function LoadDesc()
 
 	$('#desVarName').text(vari.fullName);
 	$('#desVarDesc').text(vari.Description + ' (' + vari.unit + '; ' +vari.year + ')');
-	oecd = 'Podrobnější informace jsou k dispozici v reportu <a href="http://www.oecd.org/edu/education-at-a-glance-19991487.htm">Education at glance</a> na straně %pg v kapitole %ch. Data lze také stáhnout přímo <a href="%l">zde</a>'
+	oecd = 'Podrobnější informace jsou k dispozici v reportu <a href="http://www.oecd.org/edu/education-at-a-glance-19991487.htm">Education at glance</a> na straně %pg v kapitole %ch. <br>Data lze také stáhnout přímo <a href="%l">zde</a>'
 	oecd = oecd.replace('%pg',vari.sourcePage)
 	oecd = oecd.replace('%ch',vari.ref)
 	oecd = oecd.replace('%l',vari.sourceLink)

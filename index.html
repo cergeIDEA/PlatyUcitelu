@@ -1,11 +1,15 @@
-<html>
+﻿<html>
 <head>
 <meta charset="utf-8">
-<title>IDEA - Učitelé v mezinárodním srovnání</title>
+<title>IDEA pro volby - Důsledky nízkých platů učitelů</title>
 
-<!-- loading jQuery and D3 -->
+<!-- loading jQuery and D3
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+ -->
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript" src="d3.js"></script>
+
 
 <!-- loading chart source code and data-->
 <script type="text/javascript" src="data.js"></script>
@@ -21,11 +25,12 @@
 
 </head>
 <body onload="LoadMap_First()">
-	  <h1 id="title">Učitelé v mezinárodním srovnání</h1>
+	  <h1 id="title">Důsledky nízkých platů učitelů</h1>
   <!-- <h2 class="subtitle">First phase of McWages project</h2>
 	<h3 class="credit">Interaktivní vizualizace postavená na datech organizace OECD</h3> -->
 
 <a href="http://idea.cerge-ei.cz/" target="_blank"><img id="logo" src="IDEA.png"/></a>
+<a href="http://av21.avcr.cz/" target="_blank"><img id="logo2" src="justStrategyWhite.png"/></a>
 	<div id="controls">
 
 		<div id="menu">
@@ -63,7 +68,7 @@
 		<a id="a_teacherExpSh" href="javascript:void(0);" onclick="changeVar('teacherExpSh')">Platy učitelů vůči celkovým výdajům</a>
 		<a id="a_teacherCurrentSh" href="javascript:void(0);" onclick="changeVar('teacherCurrentSh')">Platy učitelů vůči provozním výdajům</a>
 		<p>Charakteristiky učitelů: </p>
-		<a id="a_ageBelow30" href="javascript:void(0);" onclick="changeVar('ageBelow30')">Podíl učitelů pod 30 let</a>
+		<a id="a_ageBelow40" href="javascript:void(0);" onclick="changeVar('ageBelow40')">Podíl učitelů pod 40 let</a>
 		<!-- <a id="a_age30_39" href="javascript:void(0);" onclick="changeVar('age30_39')">Podíl učitelů 30 a 39 lety</a> -->
 		<a id="a_maleSh" href="javascript:void(0);" onclick="changeVar('maleSh')">Podíl mužů mezi učitely</a>
 	</div>
