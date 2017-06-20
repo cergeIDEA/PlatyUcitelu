@@ -7,7 +7,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	fill: #7A7A7A;
-	text-align: center;
+	text-align: left;
 }
 
 /* HEADINGS */
@@ -15,13 +15,28 @@ body {
 	position:absolute;
 	top:15px;
 	margin-top: 0px;
-	left:50%;
-	margin-left:-360px;
+	left:190px;
 	font-size: 2rem;
-  fill: #4F4F4F;
-  font-weight: 500;
-  text-anchor: middle;
+    fill: #4F4F4F;
+    font-weight: 500;
+    text-anchor: middle;
 }
+
+#chartContainer {
+  width: 585px;
+  height:350px;
+  /*left:50%;*/
+  left:273px;
+  top:43px;
+  /*margin:auto;*/
+  /*margin-left: -285px;*/
+  position:absolute;
+  /*margin-top:7px;*/
+  /*margin-bottom: 15px;*/
+}
+
+
+
 .subtitle {
   font-size: 1.6rem;
   fill: #AAAAAA;
@@ -45,27 +60,20 @@ body {
 #logo {
 	width: 150px;
 	position: absolute;
-	left:50%;
-	margin-left: -545px;
+	/*left:50%;*/
+	/*margin-left: -545px;*/
 	top: 15px;
 }
 
-/*#logo2 {
-	display:block;
-	width: 120px;
-	position: absolute;
-	/*left:50%;
-	margin-left: 175px;
-	top: 12px;
-}*/
 #logo2 {
 	display:block;
 	width: 140px;
 	position: absolute;
-	left:50%;
+	/*left:50%;*/
+	left:710px;
 	top: 12px;
 	cursor:pointer;
-	margin-left: 155px;
+	/*margin-left: 155px;*/
 }
 /* DROPDOWN MENU */
 
@@ -78,8 +86,8 @@ body {
 
 	background-color: #D0E3F1;
 	top:53px;
-	left:50%;
-	margin-left:-550px;
+	/*left:50%;*/
+	/*margin-left:-550px;*/
 }
 
 #sideMenu a{
@@ -120,12 +128,12 @@ body {
 
 #controls {
 	position: absolute;
-
 	display:block;
 	text-align:center;
 	top:25px;
-	left:50%;
-	margin-left: 120px;
+	/*left:50%;*/
+	left:520px;
+	/*margin-left: 120px;*/
 	height:20px;
 	width:600px;
 	/*margin-top:0px;*/
@@ -184,8 +192,8 @@ body {
 
 #divZoom {
 	position:absolute;
-	left:50%;
-	margin-left:-460px;
+	/*left:50%;*/
+	/*margin-left:-460px;*/
 	top:-5px;
 }
 
@@ -210,8 +218,8 @@ body {
 	background-color: #bb133e;
 	position:absolute;
 	top:50px;
-	left:50%;
-	margin-left: -550px;
+	/*left:50%;*/
+	/*margin-left: -550px;*/
 }
 
 #divZoom a.selected {
@@ -232,30 +240,11 @@ body {
 	border: 2px solid #bb133e;
 }
 
-/*
-#divZoomOut {
-	left:50%;
-	margin-left:-220px;
-	display:none;
-}
 
-#zoomOutBtn:hover {
-	font-weight:600;
-}*/
 
-#divVar {
-	min-width: 250px;
-	font-size:2.0rem;
-	left:50%;
-	margin-left:40px;
-}
 #main {
 	width:850px;
 	height: 600px;
-}
-#divYear {
-	left:50%;
-	margin-left:220px;
 }
 
 #descBox {
@@ -263,14 +252,16 @@ body {
 	display: block;
 	top: 503px;
 	width: 580px;
-	left: 50%;
+	/*left: 50%;*/
+	left:273px;
 	height:138px;
 	background: #bb133e;
 	padding: 5px;
 	/*border-radius: :20px;*/
 	font-size:1.2rem;
 	color: white;
-	margin-left: -285px;
+	text-align: center;
+	/*margin-left: -285px;*/
 }
 
 #desVarName {
