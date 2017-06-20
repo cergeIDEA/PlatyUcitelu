@@ -16,7 +16,7 @@ body {
 	top:15px;
 	margin-top: 0px;
 	left:50%;
-	margin-left:-300px;
+	margin-left:-360px;
 	font-size: 2rem;
   fill: #4F4F4F;
   font-weight: 500;
@@ -50,12 +50,30 @@ body {
 	top: 15px;
 }
 
+/*#logo2 {
+	display:block;
+	width: 120px;
+	position: absolute;
+	/*left:50%;
+	margin-left: 175px;
+	top: 12px;
+}*/
+#logo2 {
+	display:block;
+	width: 140px;
+	position: absolute;
+	left:50%;
+	top: 12px;
+	cursor:pointer;
+	margin-left: 155px;
+}
 /* DROPDOWN MENU */
 
 #sideMenu {
 	display:block;
 	position: absolute;
-	width: 250px;
+	width: 265px;
+	height: 598px;
 	/*background-color: #99C2E1;*/
 
 	background-color: #D0E3F1;
@@ -66,6 +84,7 @@ body {
 
 #sideMenu a{
 	color: black;
+	height: 16px;
 	text-align:left;
 	padding: 5px 5px;
 	text-decoration: none;
@@ -74,14 +93,15 @@ body {
 }
 
 #sideMenu p {
-	color: black;
+	height: 16px;
+	color: #4F4F4F;
 	text-align:left;
 	padding: 5px 5px;
 	margin: 0px 0px;
 	text-decoration: none;
 	display: block;
 	font-size: 1.2rem;
-	font-weight: 500;
+	font-weight: 600;
 
 }
 
@@ -160,14 +180,12 @@ body {
 	font-size: 1.2rem;
 	font-weight: 500;
 }
-
-
 /*POSITIONING MENU CONTROLS */
 
 #divZoom {
 	position:absolute;
 	left:50%;
-	margin-left:-305px;
+	margin-left:-460px;
 	top:-5px;
 }
 
@@ -246,15 +264,15 @@ body {
 	top: 503px;
 	width: 580px;
 	left: 50%;
-	height:141px;
+	height:138px;
 	background: #bb133e;
-	padding: 15px;
-	border-radius: :20px;
+	padding: 5px;
+	/*border-radius: :20px;*/
 	font-size:1.2rem;
 	color: white;
-	margin-left: -300px;
+	margin-left: -285px;
 }
 
 #desVarName {
 	font-weight: bold;
-BB133E}
+}
