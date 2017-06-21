@@ -15,7 +15,7 @@ body {
 	position:absolute;
 	top:15px;
 	margin-top: 0px;
-	left:190px;
+	left:220px;
 	font-size: 2rem;
     fill: #4F4F4F;
     font-weight: 500;
@@ -57,21 +57,34 @@ body {
 	color: #4F4F4F;
 }
 
+#divLogo {
+
+
+}
 #logo {
-	width: 150px;
+
 	position: absolute;
 	left:10px;
 	top: 15px;
+	width: 150px;
+	z-index: 999;
+	/*position: absolute;
+	left:10px;
+	top: 15px;*/
 }
 
+#divLogo2 {
+
+}
 #logo2 {
-	display:block;
-	width: 140px;
 	position: absolute;
+	z-index: 999;
+	left:720px;
+	top: 460px;
+	width: 140px;
 	/*left:50%;*/
-	left:710px;
-	top: 12px;
-	cursor:pointer;
+
+	/*cursor:pointer;*/
 	/*margin-left: 155px;*/
 }
 /* DROPDOWN MENU */
@@ -131,7 +144,7 @@ body {
 	text-align:center;
 	top:25px;
 	/*left:50%;*/
-	left:520px;
+	left:660px;
 	/*margin-left: 120px;*/
 	height:20px;
 	width:600px;
