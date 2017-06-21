@@ -142,8 +142,8 @@ function LoadMap()
 				}
 			else
 				{
-					// $('#' + d).css('fill','#AAAAAA')
-					$('#' + d).css('fill','url(#diagonalHatch')
+					$('#' + d).css('fill','#DDDDDD')
+					//$('#' + d).css('fill','url(#diagonalHatch')
 				}
 		}
     );
@@ -198,7 +198,7 @@ function generateLegendText()
 		}
 
 
-	if (unit == '%')
+	if (unit.indexOf('%') != -1)
 	{
 		texts = []
 		for (var s in result) {

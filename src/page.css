@@ -60,8 +60,7 @@ body {
 #logo {
 	width: 150px;
 	position: absolute;
-	/*left:50%;*/
-	/*margin-left: -545px;*/
+	left:10px;
 	top: 15px;
 }
 
