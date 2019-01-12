@@ -1,3 +1,4 @@
 # PlatyUcitelu
 Infografika na platy ucitelu
-cergeidea.io/PlatyUcitelu
+
+[cergeidea.github.io/PlatyUcitelu](cergeidea.github.io/PlatyUcitelu)
